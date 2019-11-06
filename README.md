@@ -1,2 +1,9 @@
 # functional-programming
-My repository for the functional programming course at CMDA
+
+Welcome to the functional programming wiki!
+
+# Contents
+
+## 1 - Concept
+## 2 - Data
+
