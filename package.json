@@ -1,0 +1,22 @@
+{
+  "name": "datavisualisationd3",
+  "version": "1.0.0",
+  "description": "Project for functional-programming at CMDA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CountNick/functional-programming.git"
+  },
+  "keywords": [
+    "functional-programming"
+  ],
+  "author": "Nick Meijer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CountNick/functional-programming/issues"
+  },
+  "homepage": "https://github.com/CountNick/functional-programming#readme"
+}
