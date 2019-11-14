@@ -44,5 +44,6 @@ SELECT ?cho ?title ?typeLabel ?cultHer WHERE {
 }
 ```
 
+# 3 - Functional pattern
 
-
+One of the assignments was to write a functional piece of code. I wrote a piece of functional code to clean up the data from the survey we filled in at school. The row i chose to clean up was the eye color row. The piece of functional code i wrote is found on this page: [https://github.com/CountNick/functional-programming/blob/master/js/index.js]()
