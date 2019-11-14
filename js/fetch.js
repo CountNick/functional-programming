@@ -1,4 +1,4 @@
-//console.log(d3.symbol())
+
 
 const svg = d3.select('svg');
 
@@ -9,7 +9,7 @@ const render = objectsArray => {
   
   const xValue = row => row.amount;
   const yValue = originRow => originRow.origin;
-  const margin = { top: 20, right: 20, bottom: 20, left: 80 };
+  const margin = { top: 40, right: 30, bottom: 70, left: 120 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   
@@ -30,18 +30,28 @@ const render = objectsArray => {
   	.attr('transform', `translate(${margin.left}, ${margin.top})`);
   
   g.append('g')
-    .call(d3.axisLeft(yScale));
+    .call(d3.axisLeft(yScale)
+         		.tickSize(-innerWidth))
+  	.append('text')
+  	.attr('fill', 'black')
+  	//.attr('y', innerHeight /2)
+  	//.text('Continenten');
   
   g.append('g')
-    .call(d3.axisBottom(xScale))
-  	.attr('transform', `translate(0, ${innerHeight})`);
-  
+    .call(d3.axisBottom(xScale)
+         .tickSize(-innerHeight))
+  	.attr('transform', `translate(0, ${innerHeight})`)
+    
+ 		.append('text')
+  	.attr('y', 60)
+  	.attr('x', innerWidth / 2)
+  	.attr('fill', 'black')
+  	.text('Aantal pijpen')
+ 
   const color = d3.scaleOrdinal()
     .domain(["hasjpijpen", "tabakspijpen", "waterpijpen", "pijpen (rookgerei)", "opiumpijpen" ])
-    .range([ "#FF0047", "#FF8600", "#6663D5", "#FFF800"]);
+    .range([ "#FF0047", "#FF8600", "#6663D5", "#FFF800"])
   
-    const symbol = d3.symbol();
-
 	g.selectAll('circle')
     .data(objectsArray)
   	.enter()
@@ -49,11 +59,21 @@ const render = objectsArray => {
   			.attr('cy', d => yScale(yValue(d)))
   			.attr('cx', d => xScale(xValue(d)))
   			.attr('r', 15)
-  			.style('fill', d => { return color(d.type) } )
+  			.style("fill", d => { return color(d.type) } )
 
+  g.append('text')
+  	.attr('y', -10)
+  	.text('Aantal rookgerei naar soort, per continent')
+  
   
 }
 
+function generateColor(object){
+
+console.log(object)
+
+
+}
 
 //puts the endpoint in a variable
 const url ="https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-36/sparql"
@@ -101,14 +121,10 @@ d3.json(url+"?query="+ encodeURIComponent(query) +"&format=json")
                 object.type = object.typeLabel.value
                 object.origin = object.herkomstSuperLabel.value
 
+                console.log(object)
                 return object
-            })
-            
-                let nest = d3.nest()
-                .key( d => {return d.origin;})
-                .entries(objectsArray)
-                console.log( nest)
-        //console.log("LOGG", objectsArray)
+            })//.filter(type => {if (type.type == "pijpen (rookgerei)") return type})
+        
         render(objectsArray)
 
     })
