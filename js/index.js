@@ -4,7 +4,6 @@ const chosenCharacter = "#";
 let data = d3.csv("kleurOgen.csv")
         .then(data => checkStartCharacter(data))
         .then(checkStartCharacter => setStartCharacter(checkStartCharacter))
-        .then(setStartCharacter => checkLength(setStartCharacter))
         .catch(err => console.error(err))
 
 function checkStartCharacter(listToClean){
@@ -38,9 +37,4 @@ function setStartCharacter(newHashArray){
 
                             console.log(newArray)
                     }
-
-function checkLength(newArray){
-
-}
-                
-//console.log(setHashArray)
+                    
