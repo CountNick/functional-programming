@@ -67,7 +67,7 @@ function renderGraph(objectsArray) {
     //sets x and y values to the values of amount and origin
     const xValue = d => d.amount;
     const yValue = d => d.origin;
-    const margin = { top: 40, right: 30, bottom: 70, left: 120 };
+    const margin = { top: 40, right: 30, bottom: 150, left: 120 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
   
@@ -118,18 +118,29 @@ function renderGraph(objectsArray) {
   			.attr('cx', d => xScale(xValue(d)))
   			.attr('r', 15)
             .style('fill', d => { return color(d.type) } );
-              
-    g.selectAll('rect')
-        .data(objectsArray)
-        .enter()
-        .append('rect')
-            .attr('height', 20)
-            .attr('width', 20)
-            .attr('x', innerWidth)
-            .style('fill', d => { return color(d.type)})
+    
+    //got his piece of code from Ramon, who got it from Laurens' code at https://beta.vizhub.com/Razpudding/921ee6d44b634067a2649f738b6a3a6e
+    const legend = svg.selectAll(".legend")
+            .data(color.domain())
+            .enter().append("g")
+            .attr("class", "legend")
+            .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+            legend.append("rect")
+            .attr("x", innerWidth /3)
+            .attr('y', innerHeight+70)
+            .attr("width", 18)
+            .attr("height", 18)
+            .style("fill", color);
+            legend.append("text")
+            .attr("x", innerWidth / 3)
+            .attr("y", innerHeight +79)
+            .attr("dy", ".35em")
+            .style("text-anchor", "end")
+            .text( d => { return d; })
 
     //sets the graph title
     g.append('text')
         .attr('y', -10)
-  	    .text('Aantal rookgerei naar type en continent')
+          .text('Aantal rookgerei naar type en continent')
+          
 }

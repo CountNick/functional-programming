@@ -1,9 +1,5 @@
-body {
-    margin: 0px;
-    overflow: hidden;
-  }
-  
-  circle {
+
+   circle {
   
     fill: tomato;
     opacity: 0.5;
@@ -14,4 +10,16 @@ body {
   
     font-size: 2em;
     font-family: sans-serif
+  }
+
+  .legend text{
+
+    font-size: 1em;
+
+  }
+
+  .legend rect{
+
+    opacity: 0.5;
+
   }
