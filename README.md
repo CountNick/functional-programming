@@ -9,9 +9,10 @@ For the course functional-programming a CMDA we were given the excercise to make
 
 ## Contents
 
-### [1 - Concept](#1-Concept)
-### [2 - Data](#2-data)
-### [3 - Functional pattern](#3-Functional-pattern)
+* ### [1 - Concept](#1-Concept)
+* ### [2 - Data](#2-data)
+* ### [3 - Functional pattern](#3-Functional-pattern)
+* ### [4 - Installation](#4-Installation)
 
 
 ## 1 - Concept
@@ -21,7 +22,10 @@ The concept is a circle packing diagram that visualizes the amounts of smoke pip
 ![ConceptImg](https://i.imgur.com/CKsA8Fr.png)
 
 ## 2 - Data
-Makes use of following query:
+
+To realise this visualisation i needed to get every continet, every type of smoking tool and the amount of each smoking tool from each continent.
+
+I made use of the follwing query, which i tweaked from one of Ivo's examples:
 
 ```
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -50,7 +54,26 @@ SELECT ?cho ?title ?typeLabel ?cultHer WHERE {
 }
 ```
 
+Once the json is loaded you get everything as a string value, even the numeric values. I fixed this by using the parseInt function to turn every string that needs to be a number in a number: 
+
+```javascript
+object.amount = parseInt(object.amount.value)
+```
+
 ## 3 - Functional pattern
 
 
 One of the assignments was to write a functional piece of code. I wrote a piece of functional code to clean up the data from the survey we filled in at school. The row i chose to clean up was the eye color row. The piece of functional code i wrote is found on [this page](https://github.com/CountNick/functional-programming/blob/master/js/index.js). If you want to read more about my proces of reading this piece of code check out [the project wiki](https://github.com/CountNick/functional-programming/wiki/3.2-Data-cleaning)
+
+## 4 - Installation:cd:
+
+## Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](https://git-scm.com/)
+
+
+* `git clone https://github.com/CountNick/functional-programming.git`
+
+Open the index.html file in your browser to see the project
