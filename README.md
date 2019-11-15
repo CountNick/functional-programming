@@ -5,7 +5,7 @@
 For the course functional-programming a CMDA we were given the excercise to make a data visualisation using the D3 library in javascript. In this repository you will find my code project as well as my [documentation](https://github.com/CountNick/functional-programming/wiki)
 
 ### [Checkout the live demo here!](https://countnick.github.io/functional-programming/)
-![demoImg](https://i.imgur.com/9SuN1pL.png)
+![demoImg](https://i.imgur.com/N1vvuSj.png)
 
 ## Contents
 
