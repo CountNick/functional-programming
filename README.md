@@ -1,20 +1,26 @@
 # functional-programming
 
-Welcome to the functional programming wiki!
+## Introduction
 
-# Contents
+For the course functional-programming a CMDA we were given the excercise to make a data visualisation using the D3 library in javascript. In this repository you will find my code project as well as my [documentation](https://github.com/CountNick/functional-programming/wiki)
 
-## [1 - Concept](#1-Concept)
-## [2 - Data](#2-data)
+### [Checkout the live demo here!](https://countnick.github.io/functional-programming/)
+![demoImg](https://i.imgur.com/9SuN1pL.png)
+
+## Contents
+
+### [1 - Concept](#1-Concept)
+### [2 - Data](#2-data)
+### [3 - Functional pattern](#3-Functional-pattern)
 
 
-# 1 - Concept
+## 1 - Concept
 
 The concept is a circle packing diagram that visualizes the amounts of smoke pipes that are in the collection of the museums and are grouped by cultural heritage. If you want to read through my whole concept checkout [the project Wiki](https://github.com/CountNick/functional-programming/wiki/2.3---Concept)
 
 ![ConceptImg](https://i.imgur.com/CKsA8Fr.png)
 
-# 2 - Data
+## 2 - Data
 Makes use of following query:
 
 ```
@@ -44,7 +50,7 @@ SELECT ?cho ?title ?typeLabel ?cultHer WHERE {
 }
 ```
 
-# 3 - Functional pattern
+## 3 - Functional pattern
 
 
 One of the assignments was to write a functional piece of code. I wrote a piece of functional code to clean up the data from the survey we filled in at school. The row i chose to clean up was the eye color row. The piece of functional code i wrote is found on [this page](https://github.com/CountNick/functional-programming/blob/master/js/index.js). If you want to read more about my proces of reading this piece of code check out [the project wiki](https://github.com/CountNick/functional-programming/wiki/3.2-Data-cleaning)
