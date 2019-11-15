@@ -4,6 +4,7 @@ const chosenCharacter = "#";
 let data = d3.csv("kleurOgen.csv")
         .then(data => checkStartCharacter(data))
         .then(checkStartCharacter => setStartCharacter(checkStartCharacter))
+        .then(setStartCharacter => checkLength(setStartCharacter))
         .catch(err => console.error(err))
 
 function checkStartCharacter(listToClean){
@@ -28,11 +29,24 @@ function setStartCharacter(newHashArray){
                             .map(chosenItem => {
                                 //if doesn't start with a chosencharacter add the chosencharacter to start of each value
                                 if(!chosenItem.startsWith(chosenCharacter, 0)) chosenItem = chosenCharacter + chosenItem
-                                //if it's longer or shorter than 7 characters which would mean it's no hexcode, replace with null
-                                if(chosenItem.length < 7 || chosenItem.length > 7) chosenItem = null
-                                //return modified values
+
                                 return chosenItem
                             })
                             //show the newly made array with the modified values
-                            console.log(newArray)
-                    }
+                            return newArray
+                    }        
+
+function checkLength(newArray){
+        //check if length is longer or shorter than 7
+        const cleanArray = newArray.map(element =>{
+                //if it's longer or shorter than 7 characters which would mean it's no hexcode, replace with null
+                if(element.length < 7 || element.length > 7){
+                        element = null
+                }  
+                //return modified values
+                return element
+        });
+        //log the cleanes array
+        console.log(cleanArray)
+
+}
