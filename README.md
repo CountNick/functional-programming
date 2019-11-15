@@ -9,9 +9,10 @@ For the course functional-programming a CMDA we were given the excercise to make
 
 ## Contents
 
-### [1 - Concept](#1-Concept)
-### [2 - Data](#2-data)
-### [3 - Functional pattern](#3-Functional-pattern)
+* ### [1 - Concept](#1-Concept)
+* ### [2 - Data](#2-data)
+* ### [3 - Functional pattern](#3-Functional-pattern)
+* ### [4 - Installation](#4-Installation)
 
 
 ## 1 - Concept
