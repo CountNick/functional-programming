@@ -76,12 +76,12 @@ into this:
 
 ```javascript
 
-{origin: "Azië", waterpijpen: 103, pijpen: 193, opiumpijpen: 146, tabakspijpen: 193}
+{origin: "Azië", waterpijpen: 103, pijpen (rookgerei): 193, opiumpijpen: 146, tabakspijpen: 193}
 
 ```
 
 
-One of the assignments was to write a functional piece of code. I wrote a piece of functional code to clean up the data from the survey we filled in at school. The row i chose to clean up was the eye color row. The piece of functional code i wrote is found on [this page](https://github.com/CountNick/functional-programming/blob/master/js/index.js). If you want to read more about my proces of reading this piece of code check out [the project wiki](https://github.com/CountNick/functional-programming/wiki/3.2-Data-cleaning). The pattern first sets every hexcode to uppercase, after that it checks whether each value starts with a #. If it doesn't it pastes a # to the start of each value. After this is done the values get passed to a new array which checks the length. A hexcode needs 7 characters, if it does not have 7 characters it's not a hexcode. If it's not a hexcode its value gets set to null.
+One of the assignments was to write a functional piece of code. I wrote a piece of functional code to clean up the data from the survey we filled in at school. The row i chose to clean up was the eye color row. The piece of functional code i wrote is found on [this page](https://github.com/CountNick/functional-programming/blob/master/js/index.js). If you want to read more about my proces of reading this piece of code check out [the project wiki](https://github.com/CountNick/functional-programming/wiki/3.4-Data-transformation-for-stacked-bar-chart). The pattern first sets every hexcode to uppercase, after that it checks whether each value starts with a #. If it doesn't it pastes a # to the start of each value. After this is done the values get passed to a new array which checks the length. A hexcode needs 7 characters, if it does not have 7 characters it's not a hexcode. If it's not a hexcode its value gets set to null.
 
 ## 4 - Installation:cd:
 
