@@ -5,19 +5,43 @@
 * Code is now rendering a legit stacked bar chart
 ![stackImg](https://i.imgur.com/IHmm6HL.png)
 * Data transformation pattern
-* Non existant values are now being added and given a value of 0 to prevent NaN errors
+* Non existant values are now being added and given a value of 0 to prevent NaN errors when rendering the chart
 
 * Code is split up in modules:
-  * [data fetching module]()
+  * [data fetching module](https://github.com/CountNick/functional-programming/blob/master/js/modules/fetchData.js)
     * this function uses the metch method and passes the data to the next function
-  * [data filtering module]()
+  * [data filtering module](https://github.com/CountNick/functional-programming/blob/master/js/modules/filterData.js)
     * this function returns only the key values neccessary to make the data visualisation
-  * [object transformation module]()
+  * [object transformation module](https://github.com/CountNick/functional-programming/blob/master/js/modules/transformToObjects.js)
     * this function merges the type and amount of each object 
-  * [check object keys module]()
+  * [check object keys module](https://github.com/CountNick/functional-programming/blob/master/js/modules/checkKeys.js)
     * this function checks whether some keys exist whithin an object. When an object doesn't have one or more of these keys it gets added and the value will be set to 0
-  * [render graph module]()
+  * [render graph module](https://github.com/CountNick/functional-programming/blob/master/js/modules/renderGraph.js)
     * this function receives the transformed data and makes use of d3's stack function
+
+### __sources__
+
+I followed [this tutorial by Curran Kelleher](https://www.youtube.com/watch?v=NlBt-7PuaLk&t=800s) to render the basic layout for rendering the barchart using d3.
+
+In order to make the visualisation i studied [this example by Mike Bostock](https://observablehq.com/@d3/stacked-bar-chart).
+
+[async data fetch by Nick Shoup](https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp)
+
+#### To help understanding selection.join :
+
+* [Selection.join by Mike Bostock](https://observablehq.com/@d3/selection-join)
+
+* [The new D3.js Join method is awesome for teaching](https://fabiofranchino.com/blog/the-new-d3.js-join-method-is-awesome-for-t/)
+
+#### Modules:
+
+* [JS modules on MDN](https://www.google.com/search?q=js+modules+how+to+use&rlz=1C5CHFA_enNL716NL718&oq=js+modules+how+&aqs=chrome.1.69i57j0l2.3675j1j7&sourceid=chrome&ie=UTF-8)
+
+
+
+## __The old code is [still visible here](https://github.com/CountNick/functional-programming/tree/gh-pages)__
+
+
 
 
 
