@@ -6,5 +6,6 @@ kleurOgen.csv
 test.csv
 promise.js
 /js/new2.js
-/js/fetch.js
+
 /js/hexColor.js
+.vscode
