@@ -1,5 +1,26 @@
 # functional-programming
 
+## changes made for resit
+
+* Code is now rendering a legit stacked bar chart
+![stackImg](https://i.imgur.com/IHmm6HL.png)
+* Data transformation pattern
+* Non existant values are now being added and given a value of 0 to prevent NaN errors
+
+* Code is split up in modules:
+  * [data fetching module]()
+    * this function uses the metch method and passes the data to the next function
+  * [data filtering module]()
+    * this function returns only the key values neccessary to make the data visualisation
+  * [object transformation module]()
+    * this function merges the type and amount of each object 
+  * [check object keys module]()
+    * this function checks whether some keys exist whithin an object. When an object doesn't have one or more of these keys it gets added and the value will be set to 0
+  * [render graph module]()
+    * this function receives the transformed data and makes use of d3's stack function
+
+
+
 ## Introduction
 
 For the course functional-programming a CMDA we were given the excercise to make a data visualisation using the D3 library in javascript. In this repository you will find my code project as well as my [documentation](https://github.com/CountNick/functional-programming/wiki)
@@ -20,6 +41,10 @@ For the course functional-programming a CMDA we were given the excercise to make
 The concept is a stacked bar chart that visualizes the amounts of smoke pipes that are in the collection of the museums. The colors represent the types of pipes(opiumpipes, tobaccopipes etc.) and they are grouped by the continent they originate from. If you want to read through my whole concept checkout [the project Wiki](https://github.com/CountNick/functional-programming/wiki/2.3---Concept)
 
 ![ConceptImg](https://i.imgur.com/CKsA8Fr.png)
+
+### New version
+
+![stackImg](https://i.imgur.com/IHmm6HL.png)
 
 ## 2 - Data
 
