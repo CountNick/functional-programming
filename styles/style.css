@@ -1,8 +1,6 @@
 
    circle {
   
-    fill: tomato;
-    opacity: 0.5;
     stroke: black;
     
   }
@@ -21,6 +19,34 @@
 
   .legend rect{
 
-    opacity: 0.5;
+    opacity: 1;
 
   }
+
+  .toolTip {
+    position: absolute;
+    display: none;
+    min-width: 80px;
+    height: auto;
+    background: none repeat scroll 0 0 #ffffff;
+    background-color: ghostwhite;
+    border-radius: .2rem;
+    padding: 14px;
+    text-align: center;
+  }
+  
+
+  select{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  rect:hover{
+    opacity: 80%;
+  }
+
+  /* body{
+    background-color: grey;
+  } */
+
+
