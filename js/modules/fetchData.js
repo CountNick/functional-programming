@@ -1,4 +1,5 @@
 //resource used: https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
+//MDN await: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
 export default async function fetchData(){
 
 //puts the endpoint in a variable
@@ -32,7 +33,7 @@ WHERE {
   
 } #GROUP BY ?herkomstSuper ?herkomstSuperLabel 
 `
-
+//await pauses async function to pause untill promis is settled => when function resumes value of await becomes that of fulfilled promise
 let response = await fetch(url + "?query=" + encodeURIComponent(query) + "&format=json");
 
 let json = await response.json();
