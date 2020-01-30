@@ -19,6 +19,46 @@
   * [render graph module](https://github.com/CountNick/functional-programming/blob/master/js/modules/renderGraph.js)
     * this function receives the transformed data and makes use of d3's stack function
 
+## functional pattern / data transformation
+
+I wanted to make use of the D3 stack function as seen in [this example](https://observablehq.com/@d3/stacked-bar-chart) by Mike Bostock. But for this to work the data had to be transformed from this hierarchy:
+
+```javascript
+
+0: {origin: "Amerika", type: "opiumpijpen", amount: 2}
+1: {origin: "Afrika", type: "tabakspijpen", amount: 51}
+2: {origin: "Azië", type: "waterpijpen", amount: 103}
+3: {origin: "Afrika", type: "pijpen (rookgerei)", amount: 321}
+4: {origin: "Amerika", type: "hasjpijpen", amount: 1}
+5: {origin: "Eurazië", type: "tabakspijpen", amount: 2}
+6: {origin: "Oceanië", type: "tabakspijpen", amount: 39}
+7: {origin: "Afrika", type: "waterpijpen", amount: 2}
+8: {origin: "Oceanië", type: "pijpen (rookgerei)", amount: 30}
+9: {origin: "Azië", type: "pijpen (rookgerei)", amount: 193}
+10: {origin: "Eurazië", type: "pijpen (rookgerei)", amount: 9}
+11: {origin: "Afrika", type: "hasjpijpen", amount: 1}
+12: {origin: "Azië", type: "opiumpijpen", amount: 146}
+13: {origin: "Amerika", type: "tabakspijpen", amount: 11}
+14: {origin: "Azië", type: "tabakspijpen", amount: 193}
+15: {origin: "Amerika", type: "pijpen (rookgerei)", amount: 81}
+
+```
+
+into this:
+
+```javascript
+
+0: {origin: "Amerika", opiumpijpen: 2, hasjpijpen: 1, tabakspijpen: 11, pijpen (rookgerei): 81, …}
+1: {origin: "Afrika", tabakspijpen: 51, pijpen (rookgerei): 321, waterpijpen: 2, hasjpijpen: 1, …}
+2: {origin: "Azië", waterpijpen: 103, pijpen (rookgerei): 193, opiumpijpen: 146, tabakspijpen: 193, …}
+3: {origin: "Eurazië", tabakspijpen: 2, pijpen (rookgerei): 9, waterpijpen: 0, opiumpijpen: 0, …}
+4: {origin: "Oceanië", tabakspijpen: 39, pijpen (rookgerei): 30, waterpijpen: 0, opiumpijpen: 0, …}
+
+```
+This had to be done in order to use d3 stack()
+
+## [checkout the data ]()
+
 ### __sources__
 
 I followed [this tutorial by Curran Kelleher](https://www.youtube.com/watch?v=NlBt-7PuaLk&t=800s) to render the basic layout for rendering the barchart using d3.
@@ -60,15 +100,12 @@ For the course functional-programming a CMDA we were given the excercise to make
 * ### [4 - Installation](#4-Installation)
 
 
-## 1 - Concept - *Nieuwe afbeelding*
+## 1 - Concept 
 
 The concept is a stacked bar chart that visualizes the amounts of smoke pipes that are in the collection of the museums. The colors represent the types of pipes(opiumpipes, tobaccopipes etc.) and they are grouped by the continent they originate from. If you want to read through my whole concept checkout [the project Wiki](https://github.com/CountNick/functional-programming/wiki/2.3---Concept)
 
 ![ConceptImg](https://i.imgur.com/CKsA8Fr.png)
 
-### New version
-
-![stackImg](https://i.imgur.com/IHmm6HL.png)
 
 ## 2 - Data
 
@@ -112,23 +149,6 @@ object.amount = parseInt(object.amount.value)
 ```
 
 ## 3 - Functional pattern
-
-I wanted to make use of the D3 stack function as seen in [this example](https://observablehq.com/@d3/stacked-bar-chart) by Mike Bostock. But for this to work the data had to be transformed from this hierarchy:
-
-```javascript
-
-{origin: "Azië", type: "opiumpijpen", amount: 2}
-
-```
-
-into this:
-
-```javascript
-
-{origin: "Azië", waterpijpen: 103, pijpen (rookgerei): 193, opiumpijpen: 146, tabakspijpen: 193}
-
-```
-
 
 One of the assignments was to write a functional piece of code. I wrote a piece of functional code to clean up the data from the survey we filled in at school. The row i chose to clean up was the eye color row. The piece of functional code i wrote is found on [this page](https://github.com/CountNick/functional-programming/blob/master/js/index.js). If you want to read more about my proces of reading this piece of code check out [the project wiki](https://github.com/CountNick/functional-programming/wiki/3.4-Data-transformation-for-stacked-bar-chart). The pattern first sets every hexcode to uppercase, after that it checks whether each value starts with a #. If it doesn't it pastes a # to the start of each value. After this is done the values get passed to a new array which checks the length. A hexcode needs 7 characters, if it does not have 7 characters it's not a hexcode. If it's not a hexcode its value gets set to null.
 
