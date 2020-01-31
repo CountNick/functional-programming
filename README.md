@@ -21,6 +21,8 @@
 
 ## functional pattern / data transformation
 
+[full data transformation documentation](https://github.com/CountNick/functional-programming/wiki/3.4-Data-transformation-for-stacked-bar-chart)
+
 [What makes it functional you ask?](https://github.com/CountNick/functional-programming/wiki/3.6-What-makes-it-functional%3F)
 
 I wanted to make use of the D3 stack function as seen in [this example](https://observablehq.com/@d3/stacked-bar-chart) by Mike Bostock. But for this to work the data had to be transformed from this hierarchy:
