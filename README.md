@@ -12,7 +12,7 @@
     * this function uses the metch method and passes the data to the next function
   * [data filtering module](https://github.com/CountNick/functional-programming/blob/master/js/modules/filterData.js)
     * this function returns only the key values neccessary to make the data visualisation
-  * [object transformation module](https://github.com/CountNick/functional-programming/blob/master/js/modules/transformToObjects.js)
+  * [object transformation module](https://github.com/CountNick/functional-programming/blob/master/js/modules/modifyObjects.js)
     * this function merges the type and amount of each object 
   * [check object keys module](https://github.com/CountNick/functional-programming/blob/master/js/modules/checkKeys.js)
     * this function checks whether some keys exist whithin an object. When an object doesn't have one or more of these keys it gets added and the value will be set to 0
@@ -57,7 +57,7 @@ into this:
 ```
 This had to be done in order to use d3 stack()
 
-## [checkout the data ]()
+## [checkout the data ](https://github.com/CountNick/functional-programming#2---data-1)
 
 ### __sources__
 

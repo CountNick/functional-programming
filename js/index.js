@@ -7,4 +7,4 @@ import modifyObjects from './modules/modifyObjects.js'
 fetchData()
     .then(data => filterData(data))
     .then(filterData => modifyObjects(filterData))
-    .then(modifyObjects => renderGraph(modifyObjects))
+    .then(modifyObjects => renderGraph(modifyObjects));
