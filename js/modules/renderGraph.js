@@ -71,7 +71,6 @@ export default function renderGraph(data){
             .selectAll("rect")
             .data(d => d)
             .join("rect")
-            //.attr("x", (d, i) => x(d.data.name))
             .attr("y", d => yScale(d.data.origin))
             .attr("x", d => xScale(d[0]))
             .attr("height", yScale.bandwidth())
@@ -86,9 +85,6 @@ export default function renderGraph(data){
                 .enter().append("g")
                 .attr("class", "legend")
                 .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
-                .on("mouseenter", d => {
-                    console.log(d)
-                });
                 legend.append("rect")
                 .attr("x", 630 + innerWidth /3)
                 .attr('y', innerHeight+70)
