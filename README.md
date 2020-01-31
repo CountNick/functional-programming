@@ -21,6 +21,8 @@
 
 ## functional pattern / data transformation
 
+[What makes it functional you ask?](https://github.com/CountNick/functional-programming/wiki/3.6-What-makes-it-functional%3F)
+
 I wanted to make use of the D3 stack function as seen in [this example](https://observablehq.com/@d3/stacked-bar-chart) by Mike Bostock. But for this to work the data had to be transformed from this hierarchy:
 
 ```javascript
@@ -55,7 +57,33 @@ into this:
 4: {origin: "Oceanië", tabakspijpen: 39, pijpen (rookgerei): 30, waterpijpen: 0, opiumpijpen: 0, …}
 
 ```
-This had to be done in order to use d3 stack()
+This had to be done in order to use the [d3 stack function](https://github.com/d3/d3-shape/blob/master/README.md#stacks).
+
+The stack function is used in the following manner: 
+
+```javascript
+//stack the smokingtools
+let stack = d3.stack()
+.keys(["hasjpijpen", "tabakspijpen", "waterpijpen", "pijpen (rookgerei)", "opiumpijpen"])
+.order(d3.stackOrderAscending)
+.offset(d3.stackOffsetNone);
+
+//give the stack function the cleaned data
+let series = stack(data)
+```
+
+this produces the following:
+
+```javascript
+
+  [[0, 1], [0, 1], [0,  0], [0,  0], [0, 0], data: {…}] // hasjpijpen
+  [[1, 1], [1, 3], [0, 103], [0, 0], [0, 0], data: {…}], // waterpijpen
+  [[1, 3], [3, 3], [103, 249], [0, 0], [0, 0], data: {…}], // opiumpijpen
+  [[3, 14], [3, 54], [249, 442], [0, 2], [0, 39], data: {…}] // tabakspijpen
+
+
+```
+[Check wiki for in depth explenation](https://github.com/CountNick/functional-programming/wiki/3.5-Making-the-stacked-bar-chart)
 
 ## [checkout the data ](https://github.com/CountNick/functional-programming#2---data-1)
 
