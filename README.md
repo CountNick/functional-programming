@@ -80,8 +80,7 @@ this produces the following:
   [[1, 1], [1, 3], [0, 103], [0, 0], [0, 0], data: {…}], // waterpijpen
   [[1, 3], [3, 3], [103, 249], [0, 0], [0, 0], data: {…}], // opiumpijpen
   [[3, 14], [3, 54], [249, 442], [0, 2], [0, 39], data: {…}] // tabakspijpen
-
-
+  [[14, 95], [54, 375], [442, 635], [2, 11], [39, 69], data: {…}] // pijpen: (rookgerei)
 ```
 [Check wiki for in depth explenation](https://github.com/CountNick/functional-programming/wiki/3.5-Making-the-stacked-bar-chart)
 
